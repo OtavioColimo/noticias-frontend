@@ -157,12 +157,37 @@
       margin-bottom: 20px;
       border-left: 4px solid #3c3;
     }
+
+    footer {
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      color: white;
+      text-align: center;
+      padding: 20px;
+      margin-top: 50px;
+      border-radius: 8px;
+      font-size: 14px;
+    }
+
+    footer p {
+      margin: 5px 0;
+    }
+
+    footer a {
+      color: #fff;
+      text-decoration: none;
+      font-weight: 600;
+      transition: opacity 0.3s;
+    }
+
+    footer a:hover {
+      opacity: 0.8;
+    }
   </style>
 </head>
 <body>
   <div class="container">
     <h1>📰 Agregador de Notícias</h1>
-    <p class="version">v1.0.1 - CI/CD com Vercel + Render</p>
+    <p class="version">v1.1.0 - CI/CD com Vercel + Render</p>
 
     <div id="mensagem"></div>
 
@@ -191,6 +216,11 @@
 
     <h2 style="margin-bottom: 20px; color: #333;">Notícias Carregadas:</h2>
     <div id="noticias" class="noticias-container"></div>
+
+    <footer>
+      <p>💻 <strong>Agregador de Notícias</strong> - Desenvolvido com CI/CD</p>
+      <p>© 2025 - Fatec | <a href="#" onclick="alert('v1.0.1 - Todos os direitos reservados')">Sobre</a></p>
+    </footer>
   </div>
 
   <script src="script.js"></script>
