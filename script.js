@@ -1,6 +1,26 @@
 // Configure a URL do seu backend aqui
 const API_URL = "https://noticias-backend-1ti0.onrender.com";
 
+// Função para chamar a API v1
+async function chamarAPIv1() {
+  const respostaDiv = document.getElementById("resposta-api-v1");
+
+  try {
+    const resposta = await fetch(`${API_URL}/v1`);
+
+    if (!resposta.ok) {
+      throw new Error(`Erro HTTP: ${resposta.status}`);
+    }
+
+    const dados = await resposta.json();
+    respostaDiv.innerHTML = `<div class="success">✅ ${dados.message}<br/><strong>Chamada em:</strong> ${dados.chamada_em}</div>`;
+
+  } catch (erro) {
+    console.error('Erro ao chamar API v1:', erro);
+    respostaDiv.innerHTML = `<div class="error">❌ Erro ao chamar API v1: ${erro.message}</div>`;
+  }
+}
+
 async function carregarNoticias() {
   const container = document.getElementById("noticias");
   const mensagem = document.getElementById("mensagem");
